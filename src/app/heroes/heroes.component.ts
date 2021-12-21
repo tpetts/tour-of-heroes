@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HEROES } from '../mock-heroes';
 
 export interface Hero {
   id: number;
@@ -12,10 +12,12 @@ export interface Hero {
 })
 export class HeroesComponent implements OnInit {
 
-  hero: Hero = {
-    id: 1
-    , name: 'Wonder Woman'
-  };
+  heroes = HEROES;
+
+  // hero: Hero = {
+  //   id: 1
+  //   , name: 'Wonder Woman'
+  // };
 
   constructor() { }
 
