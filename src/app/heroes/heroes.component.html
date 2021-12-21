@@ -11,6 +11,7 @@
 <ul class="heroes">
     <li
         *ngFor="let hero of heroes"
+        (click)="onSelect(hero)"
     >
         <span class="badge">
             {{ hero.id }}
@@ -18,3 +19,21 @@
         {{ hero.name }}
     </li>
 </ul>
+
+<h2>{{ selectedHero?.name | uppercase }} Details</h2>
+
+<div>
+    <span>
+        id:
+    </span>
+    {{ selectedHero?.id }}
+</div>
+
+<div>
+    <label for="hero-name">Hero Name: </label>
+    <input 
+        id="hero-name"
+        [(ngModel)]="selectedHero?.name"
+        placeholder="name"
+    >
+</div>
